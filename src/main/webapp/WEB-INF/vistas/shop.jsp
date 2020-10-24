@@ -75,7 +75,7 @@
   <div class="header-top">
 	 <div class="wrap"> 
 		<div class="logo">
-			<a href="index.html"><img src="static/resources/images/logo.png" alt=""/></a>
+			<a href="${pageContext.servletContext.contextPath}/home"><img src="static/resources/images/logo.png" alt=""/></a>
 	    </div>
 	    <div class="cssmenu">
 		   <ul>
