@@ -71,18 +71,11 @@ public class Productos {
     @Column(name="hombre")
     @NotNull
     private boolean hombre;
+    
+    @Column(name="novedad")
+    private boolean novedad;
 
-    public Productos(String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre) {
-        this.tipo_producto = tipo_producto;
-        this.marca = marca;
-        this.precio = precio;
-        this.modelo = modelo;
-        this.descripcion = descripcion;
-        this.caracteristicas = caracteristicas;
-        this.hombre = hombre;
-    }
-
-    public Productos(int id, String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre) {
+    public Productos(int id, String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre, boolean novedad) {
         this.id = id;
         this.tipo_producto = tipo_producto;
         this.marca = marca;
@@ -91,7 +84,21 @@ public class Productos {
         this.descripcion = descripcion;
         this.caracteristicas = caracteristicas;
         this.hombre = hombre;
+        this.novedad = novedad;
     }
+
+    public Productos(String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre, boolean novedad) {
+        this.tipo_producto = tipo_producto;
+        this.marca = marca;
+        this.precio = precio;
+        this.modelo = modelo;
+        this.descripcion = descripcion;
+        this.caracteristicas = caracteristicas;
+        this.hombre = hombre;
+        this.novedad = novedad;
+    }
+
+    
 
     public Productos() {
     }
@@ -162,10 +169,20 @@ public class Productos {
         this.hombre = hombre;
     }
 
+    public boolean isNovedad() {
+        return novedad;
+    }
+
+    public void setNovedad(boolean novedad) {
+        this.novedad = novedad;
+    }
+
     @Override
     public String toString() {
-        return "Productos{" + "id=" + id + ", tipo_producto=" + tipo_producto + ", marca=" + marca + ", precio=" + precio + ", modelo=" + modelo + ", descripcion=" + descripcion + ", caracteristicas=" + caracteristicas + ", hombre=" + hombre + '}';
+        return "Productos{" + "id=" + id + ", tipo_producto=" + tipo_producto + ", marca=" + marca + ", precio=" + precio + ", modelo=" + modelo + ", descripcion=" + descripcion + ", caracteristicas=" + caracteristicas + ", hombre=" + hombre + ", novedad=" + novedad + '}';
     }
+
+    
     
     
     

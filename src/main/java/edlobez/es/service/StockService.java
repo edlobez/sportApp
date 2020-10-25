@@ -14,40 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package edlobez.es.repository;
+package edlobez.es.service;
 
-
+import edlobez.es.domain.Colores;
+import edlobez.es.domain.Productos;
+import edlobez.es.domain.Stocks;
 import java.util.List;
 
 /**
  *
  * @author edlobez
- * @param <T>
  */
-public interface MyRepository <T> {
+public interface StockService {
     
-    void add ( T file);
+    List<Productos> getProductoByColor (Colores c);
     
-    T getbyId (int id);
+    List<Productos> getProductoByColor (String color);
     
-    void delete (T type);
+    List<Productos> getProductoByColoryTalla (String color, double talla);
     
-    void update (T type);
-    
-   // List<T> get (O_T type, String restriction);
-    
-    List<T> get (String campo, int valor);
-    
-    List<T> get (String campo, String valor);
-    
-    List <T> get ( String campo, T t);
-    
-    List <T> get ( String campo, T t, String campo2, String valor2);
-    
-    List <T> get ( String campo, T t, String campo2, double valor2);
-    
-    List <T> getAll ();
-    
-    abstract void setClass(); 
+    List<Stocks> getAll ();
     
 }

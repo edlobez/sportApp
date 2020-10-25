@@ -41,4 +41,6 @@ public interface ProductoService {
     
     List <Productos> getProductosByTipo (String tipo );
     
+    List <Productos> getNovedades ();
+    
 }

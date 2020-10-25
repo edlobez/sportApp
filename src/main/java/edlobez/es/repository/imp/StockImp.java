@@ -14,40 +14,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package edlobez.es.repository;
+package edlobez.es.repository.imp;
 
-
-import java.util.List;
+import edlobez.es.domain.Stocks;
+import edlobez.es.repository.MyRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author edlobez
- * @param <T>
  */
-public interface MyRepository <T> {
-    
-    void add ( T file);
-    
-    T getbyId (int id);
-    
-    void delete (T type);
-    
-    void update (T type);
-    
-   // List<T> get (O_T type, String restriction);
-    
-    List<T> get (String campo, int valor);
-    
-    List<T> get (String campo, String valor);
-    
-    List <T> get ( String campo, T t);
-    
-    List <T> get ( String campo, T t, String campo2, String valor2);
-    
-    List <T> get ( String campo, T t, String campo2, double valor2);
-    
-    List <T> getAll ();
-    
-    abstract void setClass(); 
+@Transactional
+@Repository
+@Component("stockImp")
+public class StockImp extends MyRepositoryImp <Stocks> implements MyRepository <Stocks>{
+
+    @Override
+    public void setClass() {
+        setType(Stocks.class);
+    }
     
 }
