@@ -35,9 +35,12 @@ import javax.validation.constraints.Size;
 public class Stocks implements Serializable {
     
     @Id
+    @Column(name="id")
+    private int id;
+    
     @ManyToOne
-    @JoinColumn(name="id")
-    private Productos id;
+    @JoinColumn(name="id_producto")
+    private Productos id_producto;
     
     @Column(name="talla")
     @NotNull
@@ -51,29 +54,51 @@ public class Stocks implements Serializable {
     @JoinColumn(name = "color")   
     private Colores color;
 
-    public Stocks(Productos id, double talla, int stock, Colores color) {
+    public Stocks(int id, Productos id_producto, double talla, int stock, Colores color) {
         this.id = id;
+        this.id_producto = id_producto;
         this.talla = talla;
         this.stock = stock;
         this.color = color;
     }
 
-    public Stocks(double talla, int stock, Colores color) {
+    public Stocks(Productos id_producto, double talla, int stock, Colores color) {
+        this.id_producto = id_producto;
         this.talla = talla;
         this.stock = stock;
         this.color = color;
     }
+
+    
 
     public Stocks() {
     }
 
-    public Productos getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Productos id) {
+    public void setId(int id) {
         this.id = id;
     }
+
+    public Productos getId_producto() {
+        return id_producto;
+    }
+
+    public void setId_producto(Productos id_producto) {
+        this.id_producto = id_producto;
+    }
+
+    public Colores getColor() {
+        return color;
+    }
+
+    public void setColor(Colores color) {
+        this.color = color;
+    }
+
+   
 
 
     public double getTalla() {
@@ -94,8 +119,10 @@ public class Stocks implements Serializable {
 
     @Override
     public String toString() {
-        return "Stocks{" + "id=" + id + ", talla=" + talla + ", stock=" + stock + ", color=" + color + '}';
+        return "Stocks{" + "id=" + id + ", id_producto=" + id_producto + ", talla=" + talla + ", stock=" + stock + ", color=" + color + '}';
     }
+
+   
     
     
     

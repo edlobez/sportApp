@@ -35,4 +35,6 @@ public interface StockService {
     
     List<Stocks> getAll ();
     
+    List <Stocks> getProductoById ( Productos p);
+    
 }

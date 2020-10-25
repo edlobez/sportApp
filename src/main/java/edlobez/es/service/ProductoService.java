@@ -43,4 +43,6 @@ public interface ProductoService {
     
     List <Productos> getNovedades ();
     
+    List <Productos> getOfertas();
+    
 }

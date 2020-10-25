@@ -74,8 +74,11 @@ public class Productos {
     
     @Column(name="novedad")
     private boolean novedad;
+    
+    @Column(name="oferta")
+    private boolean oferta;
 
-    public Productos(int id, String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre, boolean novedad) {
+    public Productos(int id, String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre, boolean novedad, boolean oferta) {
         this.id = id;
         this.tipo_producto = tipo_producto;
         this.marca = marca;
@@ -85,9 +88,10 @@ public class Productos {
         this.caracteristicas = caracteristicas;
         this.hombre = hombre;
         this.novedad = novedad;
+        this.oferta = oferta;
     }
 
-    public Productos(String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre, boolean novedad) {
+    public Productos(String tipo_producto, String marca, float precio, String modelo, String descripcion, String caracteristicas, boolean hombre, boolean novedad, boolean oferta) {
         this.tipo_producto = tipo_producto;
         this.marca = marca;
         this.precio = precio;
@@ -96,7 +100,10 @@ public class Productos {
         this.caracteristicas = caracteristicas;
         this.hombre = hombre;
         this.novedad = novedad;
+        this.oferta = oferta;
     }
+
+   
 
     
 
@@ -177,13 +184,18 @@ public class Productos {
         this.novedad = novedad;
     }
 
-    @Override
-    public String toString() {
-        return "Productos{" + "id=" + id + ", tipo_producto=" + tipo_producto + ", marca=" + marca + ", precio=" + precio + ", modelo=" + modelo + ", descripcion=" + descripcion + ", caracteristicas=" + caracteristicas + ", hombre=" + hombre + ", novedad=" + novedad + '}';
+    public boolean isOferta() {
+        return oferta;
     }
 
-    
-    
-    
+    public void setOferta(boolean oferta) {
+        this.oferta = oferta;
+    }
+
+    @Override
+    public String toString() {
+        return "Productos{" + "id=" + id + ", tipo_producto=" + tipo_producto + ", marca=" + marca + ", precio=" + precio + ", modelo=" + modelo + ", descripcion=" + descripcion + ", caracteristicas=" + caracteristicas + ", hombre=" + hombre + ", novedad=" + novedad + ", oferta=" + oferta + '}';
+    }
+
     
 }

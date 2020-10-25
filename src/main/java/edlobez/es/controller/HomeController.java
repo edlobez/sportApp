@@ -29,16 +29,16 @@ public class HomeController {
     @RequestMapping(value = {"/", "home"})
     public ModelAndView home(ModelMap modelo) {
         ModelAndView mv = new ModelAndView();        
-        mv.setViewName("home");
-        cargarTodos(modelo);
-        mostrarNovedades(modelo);
+        mv.setViewName("home");        
+        cargarNovedades(modelo);
+        cargarOfertas(modelo);
         return mv;
     }
     
     /**
      * Muestra en el slide superior las novedades
      */
-    public void mostrarNovedades (ModelMap modelo) {
+    public void cargarNovedades (ModelMap modelo) {
         List <Productos> p = productoService.getNovedades();
         for ( Productos _p : p ) {
             System.out.println("Novedades\n" + _p.toString());
@@ -58,6 +58,16 @@ public class HomeController {
         
     }
     
+    /**
+     * Cargar los productos que están en oferta
+     */
+    public void cargarOfertas (ModelMap modelo) {
+        List <Productos> p = productoService.getOfertas();
+        for ( Productos _p: p ) 
+            System.out.println("Ofertas\n" + _p);
+        modelo.addAttribute("ofertas", p);
+        
+    }
     
     private void pruebas () {
         Productos p = productoService.getProductoById(2);

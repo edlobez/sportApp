@@ -74,5 +74,10 @@ public class ProductoServiceImp implements ProductoService {
     public List<Productos> getNovedades() {
         return myProductoRepImp.get("novedad", true);
     }
+
+    @Override
+    public List<Productos> getOfertas() {
+        return myProductoRepImp.get("oferta", true);
+    }
     
 }

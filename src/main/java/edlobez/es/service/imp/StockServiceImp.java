@@ -73,6 +73,11 @@ public class StockServiceImp implements StockService {
     public List<Stocks> getAll() {
         return stock.getAll();
     }
+
+    @Override
+    public List <Stocks> getProductoById(Productos p) {
+        return stock.get("id_producto", p);
+    }
     
     
     
