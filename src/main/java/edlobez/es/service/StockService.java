@@ -37,4 +37,6 @@ public interface StockService {
     
     List <Stocks> getProductoById ( Productos p);
     
+    List <Stocks> getProductoByColor ( Productos p, Colores c);
+    
 }

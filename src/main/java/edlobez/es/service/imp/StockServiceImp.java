@@ -78,6 +78,11 @@ public class StockServiceImp implements StockService {
     public List <Stocks> getProductoById(Productos p) {
         return stock.get("id_producto", p);
     }
+
+    @Override
+    public List<Stocks> getProductoByColor(Productos prdcts, Colores clrs) {
+        return stock.get("id_producto", prdcts, "color", clrs);
+    }
     
     
     

@@ -4,6 +4,7 @@
     Author     : edlobez
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
@@ -750,19 +751,19 @@ Fin filtros de la izquierda -->
 				     <ul id="etalage">
 							<li>
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="images/t1.jpg" />
-									<img class="etalage_source_image" src="images/t2.jpg" />
+									<img class="etalage_thumb_image" src="static/resources/images/${producto.id}/${color_actual}/t1.jpg" />
+									<img class="etalage_source_image" src="static/resources/images/${producto.id}/${color_actual}/t2.jpg" />
 								</a>
 							</li>
 							<li>
-								<img class="etalage_thumb_image" src="images/t2.jpg" />
-								<img class="etalage_source_image" src="images/t2.jpg" />
+								<img class="etalage_thumb_image" src="static/resources/images/${producto.id}/${color_actual}/t2.jpg" />
+								<img class="etalage_source_image" src="static/resources/images/${producto.id}/${color_actual}/t2.jpg" />
 							</li>
 							<li>
-								<img class="etalage_thumb_image" src="images/t3.jpg" />
-								<img class="etalage_source_image" src="images/t3.jpg" />
+								<img class="etalage_thumb_image" src="static/resources/images/${producto.id}/${color_actual}/t3.jpg" />
+								<img class="etalage_source_image" src="static/resources/images/${producto.id}/${color_actual}/t3.jpg" />
 							</li>
-							<li>
+							<!--<li>
 								<img class="etalage_thumb_image" src="images/t4.jpg" />
 								<img class="etalage_source_image" src="images/t4.jpg" />
 							</li>
@@ -777,7 +778,7 @@ Fin filtros de la izquierda -->
 							<li>
 								<img class="etalage_thumb_image" src="images/t1.jpg" />
 								<img class="etalage_source_image" src="images/t1.jpg" />
-							</li>
+							</li>-->
 						</ul>
 
 
@@ -786,29 +787,39 @@ Fin filtros de la izquierda -->
 
       <!-- El producto clicado -->
 			<div class="cont1 span_2_of_a1">
-				<h3 class="m_3">Loremos ipsum dolor sit amet</h3>
+				<h3 class="m_3">${producto.marca} ${producto.tipo_producto}</h3>
 
 				<div class="price_single">
-							  <span class="reducedfrom">$66.00</span>
-							  <span class="actual">$12.00</span><a href="#">click for offer</a>
+							 <!-- <span class="reducedfrom"></span>-->
+							  <span class="actual">${producto.precio}€</span><!--<a href="#">click for offer</a>-->
 							</div>
-				<ul class="options">
-					<h4 class="m_9">Select a Size</h4>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
+				
+                                                        
+                                <ul class="options">
+					<h4 class="m_9">Seleccione color</h4>
+                                        <c:forEach var="colores" items="${colores}">
+                                            <li><a href="${pageContext.servletContext.contextPath}/single?id=${producto.id}&color=${colores.color}">${colores.color}</a></li>                                           
+                                        </c:forEach>
+					<div class="clear"></div>
+                                        <div class="clear"></br></div>
+				</ul>
+                                                        
+                                <ul class="options">
+					<h4 class="m_9">Seleccione una talla</h4>
+                                        <c:forEach var="stock" items="${stocks}">
+                                            <li><a href="#">${stock.talla}</a></li>                                           
+                                        </c:forEach>
 					<div class="clear"></div>
 				</ul>
 				<div class="btn_form">
 				   <form>
-					 <input type="submit" value="buy now" title="">
+					 <input type="submit" value="Comprar ahora" title="">
 				  </form>
 				</div>
 				<ul class="add-to-links">
-    			   <li><img src="images/wish.png" alt=""/><a href="#">Add to wishlist</a></li>
+    			   <li><img src="static/resources/images/wish.png" alt=""/><a href="#">Añadir a favoritos</a></li>
     			</ul>
-    			<p class="m_desc">Aqui Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    			<p class="m_desc">${producto.descripcion}</p>
 
                 <div class="social_single">
 				   <ul>
@@ -822,7 +833,7 @@ Fin filtros de la izquierda -->
 			<div class="clear"></div>
 
 
-<!-- slide de productos similares-->
+<!-- slide de productos similares
          <ul id="flexiselDemo3">
 			<li><img src="images/pic11.jpg" /><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li>
 			<li><img src="images/pic10.jpg" /><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li>
@@ -830,6 +841,8 @@ Fin filtros de la izquierda -->
 			<li><img src="images/pic8.jpg" /><div class="grid-flex"><a href="#">Bloch</a><p>Rs 850</p></div></li>
 			<li><img src="images/pic7.jpg" /><div class="grid-flex"><a href="#">Capzio</a><p>Rs 850</p></div></li>
 		 </ul>
+
+-->
 	    <script type="text/javascript">
 		 $(window).load(function() {
 			$("#flexiselDemo1").flexisel();
@@ -878,12 +891,14 @@ Fin filtros de la izquierda -->
 	</script>
 	<script type="text/javascript" src="static/js/jquery.flexisel.js"></script>
 	 <div class="toogle">
-     	<h3 class="m_3">Product Details</h3>
-     	<p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+     	<h3 class="m_3">Descripcion</h3>
+     	<p class="m_text">${producto.descripcion}</p>
      </div>
 	 <div class="toogle">
-     	<h3 class="m_3">Product Reviews</h3>
-     	<p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+             <c:if test="${producto.caracteristicas!=null}">
+                <h3 class="m_3">Características</h3>
+                <p class="m_text">${producto.caracteristicas}.</p>
+            </c:if>
      </div>
      </div>
      <div class="clear"></div>

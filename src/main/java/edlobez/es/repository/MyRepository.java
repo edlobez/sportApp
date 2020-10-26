@@ -44,6 +44,8 @@ public interface MyRepository <T> {
     
     List <T> get ( String campo, T t, String campo2, String valor2);
     
+    List <T> get ( String campo1, T t, String campo2, T t2);
+    
     List <T> get ( String campo, T t, String campo2, double valor2);
     
     List <T> getAll ();

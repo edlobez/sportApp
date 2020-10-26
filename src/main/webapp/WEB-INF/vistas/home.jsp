@@ -235,7 +235,7 @@
                         <article style="position: relative; width: 100%; opacity: 1;">
                             <div class="banner-wrap">
                                 <div class="slider-left">
-                                    <c:set var="aux" scope="page" value="static/resources/images/${novedad.id}/portada.jpg"/>
+                                    <c:set var="aux" scope="page" value="static/resources/images/${novedad.id}/vista_1.jpg"/>
                                     <img src="${aux}" alt=""/>
                                 </div>
                                 <div class="slider-right">
@@ -296,7 +296,7 @@
                                             <c:set var="aux" scope="page" value="static/resources/images/${ofertas.id}/vista_1.jpg"/>
                                             <div class="css3"><img src="${aux}" alt=""/></div>
                                             <div class="mask">
-                                                <div class="info">Quick View</div>
+                                                <div class="info">Ver producto</div>
                                             </div>
                                         </div>
                                         <div class="price">${ofertas.precio}€</div>

@@ -111,6 +111,15 @@ public abstract class MyRepositoryImp <T> implements MyRepository <T> {
     }
     
     @Override
+    public List <T> get ( String campo1, T t, String campo2, T t2) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq(campo1, t))
+                .add(Restrictions.eq(campo2, t2))
+                ;
+        return (List<T>) criteria.list();
+    }
+    
+    @Override
     public T getbyId(int i) {
         return getSession().get( this._type, i);
     }

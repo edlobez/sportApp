@@ -16,10 +16,12 @@
  */
 package edlobez.es.controller;
 
+import edlobez.es.domain.Colores;
 import edlobez.es.domain.Productos;
 import edlobez.es.domain.Stocks;
 import edlobez.es.service.ProductoService;
 import edlobez.es.service.StockService;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,27 +43,48 @@ public class SingleController {
     @RequestMapping(value = {"single"})
     public ModelAndView saluda(
             @RequestParam("id") int id,
+            @RequestParam (name="color", required = false) String color,
             ModelMap modelo
     ) {
         ModelAndView mv = new ModelAndView();        
         mv.setViewName("single");
         
-        cargarProducto(id, modelo);      
+        cargarProducto(id, modelo, color);      
         
         return mv;
     }
 
-    private void cargarProducto(int id, ModelMap modelo) {
+    private void cargarProducto(int id, ModelMap modelo, String color) {
         Productos p = productoService.getProductoById(id);
-        List <Stocks> s = stockService.getProductoById(p);
+        List <Stocks> todos = stockService.getProductoById(p);
+        List <Stocks> por_colores = null;
+        if ( color != null) {
+          por_colores = stockService.getProductoByColor(p, new Colores(color));
+          modelo.addAttribute("color_actual", color ); 
+        }
+        else {
+          por_colores =  stockService.getProductoByColor(p, todos.get(0).getColor()); 
+          modelo.addAttribute("color_actual", todos.get(0).getColor().getColor() ); 
+        }
+        
+        
+        
+        List <Colores> colores = new ArrayList <Colores>();
         modelo.addAttribute("producto", p);
-        modelo.addAttribute("stocks", s);
+        if ( por_colores != null )
+            modelo.addAttribute("stocks", por_colores );
+        else 
+           modelo.addAttribute("stocks", todos ); 
         
         System.out.println("Producto:\n" + p);
         System.out.println("Stocks:\n");
-        for ( Stocks _s : s ) {
-            System.out.println("\n\n" + s);
+        for ( Stocks _s : todos ) {
+            System.out.println("\n\n" + _s);
+            if ( !colores.contains (_s.getColor()) )
+                colores.add(_s.getColor());
         }
+        modelo.addAttribute("colores", colores);
+        
         
     }
     
