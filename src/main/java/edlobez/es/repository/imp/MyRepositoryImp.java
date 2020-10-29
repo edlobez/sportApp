@@ -21,6 +21,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -130,6 +131,17 @@ public abstract class MyRepositoryImp <T> implements MyRepository <T> {
         Criteria criteria = createEntityCriteria();
         return (List <T>) criteria.list();
     }
+    
+    @Override
+    public List<T> getAllOrderBy(String tipo, String campo) {
+        Criteria criteria = createEntityCriteria();
+        if (tipo.toLowerCase().equals("asc"))
+            criteria.addOrder(Order.asc(campo));
+        else if (tipo.toLowerCase().equals("desc"))
+            criteria.addOrder(Order.desc(campo));
+        return (List <T>) criteria.list();
+    }
+    
 
    @Override
    public abstract void setClass(); 

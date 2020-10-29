@@ -83,6 +83,16 @@ public class StockServiceImp implements StockService {
     public List<Stocks> getProductoByColor(Productos prdcts, Colores clrs) {
         return stock.get("id_producto", prdcts, "color", clrs);
     }
+
+    @Override
+    public List<Stocks> getAllOrderAscBy(String string) {
+        return stock.getAllOrderBy("asc", string);
+    }
+
+    @Override
+    public List<Stocks> getAllOrderDecBy(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

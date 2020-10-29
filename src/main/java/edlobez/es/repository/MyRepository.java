@@ -49,6 +49,8 @@ public interface MyRepository <T> {
     List <T> get ( String campo, T t, String campo2, double valor2);
     
     List <T> getAll ();
+   
+    List<T> getAllOrderBy(String tipo, String campo);
     
     abstract void setClass(); 
     

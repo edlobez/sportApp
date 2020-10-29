@@ -35,6 +35,10 @@ public interface StockService {
     
     List<Stocks> getAll ();
     
+    List<Stocks>getAllOrderAscBy(String campo);
+    
+    List<Stocks>getAllOrderDecBy(String campo);
+    
     List <Stocks> getProductoById ( Productos p);
     
     List <Stocks> getProductoByColor ( Productos p, Colores c);

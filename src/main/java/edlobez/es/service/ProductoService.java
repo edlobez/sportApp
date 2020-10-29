@@ -45,4 +45,8 @@ public interface ProductoService {
     
     List <Productos> getOfertas();
     
+    List<Productos>getAllOrderAscBy(String campo);
+    
+    List<Productos>getAllOrderDecBy(String campo);
+    
 }

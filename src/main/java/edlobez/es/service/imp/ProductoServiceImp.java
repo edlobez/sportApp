@@ -41,7 +41,7 @@ public class ProductoServiceImp implements ProductoService {
 
     @Override
     public List<Productos> getAllProductos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return myProductoRepImp.getAll();
     }
 
     @Override
@@ -78,6 +78,16 @@ public class ProductoServiceImp implements ProductoService {
     @Override
     public List<Productos> getOfertas() {
         return myProductoRepImp.get("oferta", true);
+    }
+
+    @Override
+    public List<Productos> getAllOrderAscBy(String string) {
+        return myProductoRepImp.getAllOrderBy("asc", string);
+    }
+
+    @Override
+    public List<Productos> getAllOrderDecBy(String string) {
+        return myProductoRepImp.getAllOrderBy("desc", string);
     }
     
 }
