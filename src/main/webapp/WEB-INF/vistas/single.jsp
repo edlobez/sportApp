@@ -583,7 +583,7 @@ Fin filtros de la izquierda -->
             
             <div class="copy">
                 <div class="wrap">
-                    <p>© All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></p>
+                    <p> by&nbsp;<a href="http://www.edlobe.com/"> edlobez </a></p>
                 </div>
             </div>
         </div>

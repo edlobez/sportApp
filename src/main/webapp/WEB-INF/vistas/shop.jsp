@@ -237,56 +237,43 @@ $('.scroll-pane').jScrollPane();
                     <section  class="sky-form">
                         <h4>Marca</h4>
                         <div class="row row1 scroll-pane">
+                            
                             <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Athletic (20)</label>
-                            </div>
-                            <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Athletic Shoes (48)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Casual (45)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Casual (45)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other (1)</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Adidas</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Nike</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Reebok</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Converse</label>
                             </div>
                         </div>
                         <h4>Categoria</h4>
                         <div class="row row1 scroll-pane">
                             <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Flats (70)</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Running</label>
                             </div>
                             <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Athletic Shoes (48)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Athletic Shoes (48)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Heels (38)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other (1)</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Fitness</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Trekking</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sneakers</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Otros</label>
                             </div>
                         </div>
                         <h4>Color</h4>
                         <div class="row row1 scroll-pane">
                             <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Athletic (20)</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Blanco</label>
                             </div>
                             <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Ballerina (5)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Pumps (7)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>High Tops (2)</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other (1)</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Rojo</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Azul</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Negro</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Gris</label>
                             </div>
                         </div>
                     </section>
                     <section  class="sky-form">
                         <h4>Precio</h4>
                         <div class="row row1 scroll-pane">
-                            <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Adidas by Stella McCartney</label>
-                            </div>
-                            <div class="col col-4">
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Asics</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Bloch</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Bloch Kids</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Capezio</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>Capezio Kids</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Nike</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Zumba</label>
-                            </div>
+                          <!--  -->
                         </div>
                     </section>
             
@@ -459,7 +446,7 @@ $('.scroll-pane').jScrollPane();
             
             <div class="copy">
                 <div class="wrap">
-                    <p>© All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></p>
+                    <p> by&nbsp;<a href="http://www.edlobe.com/"> edlobez </a></p>
                 </div>
             </div>
         </div>

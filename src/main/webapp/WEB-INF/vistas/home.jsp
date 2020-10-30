@@ -227,12 +227,14 @@
         <!-- carrusel central -->
 
         <div class="index-banner">
-            <div class="wmuSlider example1" style="height: 560px;">
+            <div class="wmuSlider example1" style="height: 394px;">
                 <div class="wmuSliderWrapper">
-
-                    <c:forEach var="novedad" items="${novedades}">
-
-                        <article style="position: relative; width: 100%; opacity: 1;">
+                    <c:set var="aux_opacity" scope="page" value="1"/>
+                    <c:forEach var="novedad" items="${novedades}">                         
+                        <article style='position: relative; width: 100%; opacity: ${aux_opacity};'>
+                        <c:if test="${aux_opacity==1}">                            
+                            <c:set var="aux_opacity" scope="page" value="0"/> 
+                        </c:if>
                             <div class="banner-wrap">
                                 <div class="slider-left">
                                     <c:set var="aux" scope="page" value="static/resources/images/${novedad.id}/vista_1.jpg"/>
@@ -489,7 +491,7 @@
             
             <div class="copy">
                 <div class="wrap">
-                    <p>© All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/"> W3Layouts</a></p>
+                    <p> by&nbsp;<a href="http://www.edlobe.com/"> edlobez </a></p>
                 </div>
             </div>
         </div>
