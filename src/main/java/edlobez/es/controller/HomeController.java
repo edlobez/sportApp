@@ -21,17 +21,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value = {"/", "home"})
 public class HomeController {
     
     @Autowired ProductoService productoService;
     @Autowired StockService stockService;
 
-    @RequestMapping(value = {"/", "home"})
+    @RequestMapping(value = {""})
     public ModelAndView home(ModelMap modelo) {
         ModelAndView mv = new ModelAndView();        
         mv.setViewName("home");        
         cargarNovedades(modelo);
         cargarOfertas(modelo);
+        return mv;
+    }
+
+    @RequestMapping("presentacion")
+    public ModelAndView videoPresentacion () 
+    {
+        ModelAndView mv = new ModelAndView();        
+        mv.setViewName("presentacion");
         return mv;
     }
     
