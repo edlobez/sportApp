@@ -44,32 +44,7 @@ public class ProductoServiceImp implements ProductoService {
         return myProductoRepImp.getAll();
     }
 
-    @Override
-    public List<Productos> getProductosByColor(Colores c) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
-    }
-
-    @Override
-    public List<Productos> getProductoByTalla(double talla) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Productos> getProductosByPrecio(float precio1, float precio2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Productos> getProductosByMarca(String marca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Productos> getProductosByTipo(String tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
     @Override
     public List<Productos> getNovedades() {
         return myProductoRepImp.get("novedad", true);

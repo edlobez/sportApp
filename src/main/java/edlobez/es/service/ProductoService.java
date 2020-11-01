@@ -28,18 +28,7 @@ public interface ProductoService {
     
     Productos getProductoById ( int id );
     
-    List <Productos> getAllProductos ();
-    
-    List <Productos> getProductosByColor ( Colores c);
-    
-    List <Productos> getProductoByTalla ( double talla );
-    
-    // Retorna los productos en un rango de precios
-    List <Productos> getProductosByPrecio (float precio1, float precio2);
-    
-    List <Productos> getProductosByMarca ( String marca );
-    
-    List <Productos> getProductosByTipo (String tipo );
+    List <Productos> getAllProductos ();  
     
     List <Productos> getNovedades ();
     
